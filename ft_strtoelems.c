@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:45:01 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/20 10:46:29 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:00:22 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ t_elem	*ft_strtoelems(char **values)
 
 	if (values == NULL)
 		return (NULL);
-	first_elem = t_elem__new(ft_atoi(values[0]), NULL, NULL);
+	first_elem = t_elem__new(ft_atoi(values[0]), 0, NULL, NULL);
 	upper_elem = first_elem;
 	i = 1;
 	while (values[i])
 	{
-		upper_elem->down = t_elem__new(ft_atoi(values[i]), upper_elem, NULL);
+		upper_elem->down = t_elem__new(ft_atoi(values[i]), 0, upper_elem, NULL);
 		upper_elem = upper_elem->down;
 		i++;
 	}

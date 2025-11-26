@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:59:19 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/20 17:03:53 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:59:53 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,26 @@
 
 void	p_x(t_stack *dst, t_stack *src)
 {
-	t_elem	*head_transfer;
+	t_elem	*elem;
 
-	head_transfer = src->top;
-	if (src->top == NULL)
+	if (!(src->top))
 		return ;
-	t_stack__addhead(dst, head_transfer);
-	t_stack__remove(src, head_transfer);
+	ft_putstr("p");
+	ft_putstr(dst->name);
+	ft_putstr("\n");
+	elem = src->top;
+	src->top = elem->down;
+	if (src->top)
+		src->top->up = NULL;
+	else
+		src->bot = NULL;
+	src->size--;
+	elem->down = dst->top;
+	if (dst->top)
+		dst->top->up = elem;
+	else
+		dst->bot = elem;
+	dst->top = elem;
+	elem->up = NULL;
+	dst->size++;
 }

@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_s.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 16:57:44 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/20 17:03:37 by thantoni         ###   ########.fr       */
+/*   Created: 2025/11/26 10:26:49 by thantoni          #+#    #+#             */
+/*   Updated: 2025/11/26 10:57:58 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
+#include <stddef.h>
 
-void	s_x(t_stack *stack)
+void	ft_putstr(char *str)
 {
-	t_elem	*first;
-	t_elem	*second;
-	
-	first = stack->top;
-	if (first == NULL)
-		return ;
-	second = first->up;
-	if (second == NULL)
-		return ;
-	first->up = second->up;
-	first->down = second->down;
-	stack->top = second;
-	second->up = first;
-	second->down = NULL;
-}
+	size_t	len;
 
-void	ss(t_stack *a, t_stack *b)
-{
-	s(a);
-	s(b);
+	len = 0;
+	while (str[len])
+		len++;
+	write(1, str, len);
 }
