@@ -6,12 +6,26 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:37:04 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 17:13:16 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:43:00 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
+
+static size_t count_and_find_last(t_elem *elem, t_elem **last)
+{
+    size_t	count;
+
+    *last = elem;
+    count = 1;
+    while ((*last)->down != NULL)
+    {
+        *last = (*last)->down;
+        count++;
+    }
+    return (count);
+}
 
 t_stack	*t_stack__new(char *name, t_elem *head, t_elem *tail)
 {
@@ -93,18 +107,4 @@ void	t_stack__free_all(t_stack *stack)
 		free(to_free);
 	}
 	free(stack);
-}
-
-t_elem	*t_stack__remove(t_stack *stack, t_elem *to_remove)
-{
-	t_elem	*scroll;
-
-	scroll = stack->top;
-	while (scroll != NULL)
-	{
-		if (scroll == to_remove)
-			return (t_elem__unlink(scroll));
-		scroll = scroll->down;
-	}
-	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:02:43 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 17:14:14 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:19:52 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ t_stack	*t_stack__new(char *name, t_elem *head, t_elem *tail);
 t_stack	*t_stack__addtail(t_stack *stack, t_elem *elem);
 t_stack	*t_stack__addhead(t_stack *stack, t_elem *elem);
 void	t_stack__free_all(t_stack *stack);
-size_t	t_stack__get_size(t_stack *stack);
-t_elem	*t_stack__remove(t_stack *stack, t_elem *to_remove);
 
 void	push_x(t_stack *dst, t_stack *src);
 void	rotate_x(t_stack *stack, int print);
