@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:37:04 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/26 11:44:19 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:03:29 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,24 +62,35 @@ t_stack	*t_stack__addtail(t_stack *stack, t_elem *elem)
 
 t_stack	*t_stack__addhead(t_stack *stack, t_elem *elem)
 {
-	t_elem	*old_head;
 	t_elem	*last;
-	size_t	added_elems_count;
+    size_t	added_elems_count;
 
-	old_head = stack->top;
-	stack->top = elem;
-	if (old_head != NULL)
-		old_head->up = elem;
-	last = elem;
-	added_elems_count = 0;
-	while (last->down != NULL)
-	{
-		last = last->down;
-		added_elems_count++;
-	}
-	last->down = old_head;
-	stack->size += added_elems_count;
-	return (stack);
+    if (stack->size == 0)
+    {
+        stack->top = elem;
+        last = elem;
+        added_elems_count = 1;
+        while (last->down != NULL)
+        {
+            last = last->down;
+            added_elems_count++;
+        }
+        stack->bot = last;
+        stack->size = added_elems_count;
+        return (stack);
+    }
+    stack->bot->down = elem;
+    elem->up = stack->bot;
+    last = elem;
+    added_elems_count = 1;
+    while (last->down != NULL)
+    {
+        last = last->down;
+        added_elems_count++;
+    }
+    stack->bot = last;
+    stack->size += added_elems_count;
+    return (stack);
 }
 
 void	t_stack__free_all(t_stack *stack)

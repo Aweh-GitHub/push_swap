@@ -6,7 +6,7 @@
 #    By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 11:38:46 by thantoni          #+#    #+#              #
-#    Updated: 2025/11/26 11:45:09 by thantoni         ###   ########.fr        #
+#    Updated: 2025/11/30 16:47:15 by thantoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ SRCS =	ft_atoi.c						\
 		main.c							\
 		operation_p.c					\
 		operation_r.c					\
+		operation_s.c					\
+		operation_rr.c					\
 		t_elem__utils.c					\
 		t_stack__utils.c				
 
@@ -36,7 +38,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

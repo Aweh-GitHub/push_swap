@@ -6,11 +6,13 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:12:48 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/26 11:07:56 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:26:15 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 static t_stack	*init_ranks(t_stack *stack)
 {
@@ -60,6 +62,8 @@ static int	are_all_strvalues_valid(char **str_values)
 {
 	size_t	i;
 
+	if (str_values == NULL || str_values[0] == NULL)
+		return (0);
 	i = 0;
 	while (str_values[i] != NULL)
 	{
@@ -69,6 +73,22 @@ static int	are_all_strvalues_valid(char **str_values)
 	}
 	return (1);
 }
+
+static void	free_strvalues(char **strvalues)
+{
+    size_t	i;
+
+    if (!strvalues)
+        return ;
+    i = 0;
+    while (strvalues[i])
+    {
+        free(strvalues[i]);
+        i++;
+    }
+    free(strvalues);
+}
+
 
 t_stack	*handle_args_to_stack_initialization\
 (char *stack_name, size_t argc, char **argv)
@@ -83,10 +103,18 @@ t_stack	*handle_args_to_stack_initialization\
 	{
 		strvalues = ft_split(argv[argv_i], ' ');
 		if (!are_all_strvalues_valid(strvalues))
+		{
+			write(2, "Error\n", 6);
+			free_strvalues(strvalues);
 			return (t_stack__free_all(stack), NULL);
+		}
 		stack = t_stack__addtail(stack, ft_strtoelems(strvalues));
+		free_strvalues(strvalues);
 		if (!are_values_uniques(stack))
+		{
+			write(2, "Error\n", 6);
 			return (t_stack__free_all(stack), NULL);
+		}
 		argv_i++;
 	}
 	return (init_ranks(stack));

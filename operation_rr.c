@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_r.c                                      :+:      :+:    :+:   */
+/*   operation_rr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 16:59:43 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 16:42:56 by thantoni         ###   ########.fr       */
+/*   Created: 2025/11/30 16:45:17 by thantoni          #+#    #+#             */
+/*   Updated: 2025/11/30 16:45:51 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	r_x(t_stack *stack, int print)
+void	rr_x(t_stack *stack, int print)
 {
-    t_elem	*old_top;
-    t_elem	*old_bot;
+    t_elem	*last;
+    t_elem	*before_last;
 
-    if (!stack->top || !stack->top->down)
+    if (!stack || stack->size < 2)
         return ;
-    old_top = stack->top;
-    old_bot = stack->bot;
-    stack->top = old_top->down;
-    stack->top->up = NULL;
-    old_bot->down = old_top;
-    old_top->up = old_bot;
-    old_top->down = NULL;
-    stack->bot = old_top;
-	if (print)
+    last = stack->bot;
+    before_last = last->up;
+    before_last->down = NULL;
+    stack->bot = before_last;
+    last->down = stack->top;
+    last->up = NULL;
+    stack->top->up = last;
+    stack->top = last;
+    if (print)
     {
-        ft_putstr("r");
+        ft_putstr("rr");
         ft_putstr(stack->name);
         ft_putstr("\n");
     }
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b)
 {
-    r_x_internal(a, 0);
-    r_x_internal(b, 0);
-    ft_putstr("rr\n");
+    rr_x_internal(a, 0);
+    rr_x_internal(b, 0);
+    ft_putstr("rrr\n");
 }

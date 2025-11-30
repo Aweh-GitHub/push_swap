@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:02:43 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/26 11:04:10 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:46:42 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ size_t	t_stack__get_size(t_stack *stack);
 t_elem	*t_stack__remove(t_stack *stack, t_elem *to_remove);
 
 void	p_x(t_stack *dst, t_stack *src);
-void	r_x(t_stack *stack);
+void	r_x(t_stack *stack, int print);
+void	rr(t_stack *stack);
+void	rr_x(t_stack *stack, int print);
+void	rrr(t_stack *a, t_stack *b);
+void	s_x(t_stack *stack, int print);
+void	ss(t_stack *a, t_stack *b);
 
 #endif
