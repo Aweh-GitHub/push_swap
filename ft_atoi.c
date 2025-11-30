@@ -6,33 +6,34 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:23:36 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/26 10:57:45 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 15:37:05 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "push_swap.h"
+#include <limits.h>
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
-	int			sign;
-	long int	result;
-	size_t		i;
+    long int	result;
+    int			sign;
 
-	sign = 1;
-	result = 0;
-	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign = -sign;
-		i++;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return ((int)(result * sign));
+    result = 0;
+    sign = 1;
+    while (*str == ' ' || (*str >= 9 && *str <= 13))
+        str++;
+    if (*str == '-' || *str == '+')
+    {
+        if (*str == '-')
+            sign = -1;
+        str++;
+    }
+    while (*str >= '0' && *str <= '9')
+    {
+        result = result * 10 + (*str - '0');
+        if (result * sign > INT_MAX || result * sign < INT_MIN)
+            return (0);
+        str++;
+    }
+    return ((int)(result * sign));
 }
