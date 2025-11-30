@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:02:43 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 17:19:52 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:43:13 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	**ft_split(char const *s, char c);
 int		ft_atoi(char const *nptr);
 size_t	ft_strlen(const char *s);
 void	ft_putstr(char *str);
-
 int		ft_isnb(char *s);
 size_t	ft_splitlen(char const **split);
 t_elem	*ft_strtoelems(char **values);
