@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:12:48 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 16:26:15 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:14:03 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,18 @@ static int	are_all_strvalues_valid(char **str_values)
 
 static void	free_strvalues(char **strvalues)
 {
-    size_t	i;
+	size_t	i;
 
-    if (!strvalues)
-        return ;
-    i = 0;
-    while (strvalues[i])
-    {
-        free(strvalues[i]);
-        i++;
-    }
-    free(strvalues);
+	if (!strvalues)
+		return ;
+	i = 0;
+	while (strvalues[i])
+	{
+		free(strvalues[i]);
+		i++;
+	}
+	free(strvalues);
 }
-
 
 t_stack	*handle_args_to_stack_initialization\
 (char *stack_name, size_t argc, char **argv)

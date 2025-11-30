@@ -6,7 +6,7 @@
 #    By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 11:38:46 by thantoni          #+#    #+#              #
-#    Updated: 2025/11/30 16:53:20 by thantoni         ###   ########.fr        #
+#    Updated: 2025/11/30 17:17:14 by thantoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =	ft_atoi.c						\
+SRCS =	main.c							\
+		ft_atoi.c						\
 		ft_isnb.c						\
 		ft_putstr.c						\
 		ft_split.c						\
@@ -24,12 +25,15 @@ SRCS =	ft_atoi.c						\
 		ft_strlen.c						\
 		ft_strtoelems.c					\
 		handler_args_initialization.c	\
-		handler_sorting.c				\
-		main.c							\
-		operation_push.c					\
-		operation_rotate.c					\
-		operation_swap.c					\
-		operation_rev_rotate.c					\
+		handler_sort.c					\
+		sort_radix.c					\
+		sort_two.c						\
+		sort_three.c					\
+		sort_four_five.c				\
+		operation_push.c				\
+		operation_rotate.c				\
+		operation_swap.c				\
+		operation_rev_rotate.c			\
 		t_elem__utils.c					\
 		t_stack__utils.c				
 

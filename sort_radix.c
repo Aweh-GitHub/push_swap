@@ -6,13 +6,13 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:45:05 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 16:52:45 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:58:15 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	handle_sorting(t_stack *a, t_stack *b)
+void	sort_radix(t_stack *a, t_stack *b)
 {
 	size_t	byte_i;
 	size_t	elem_i;

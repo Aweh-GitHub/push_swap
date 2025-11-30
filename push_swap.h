@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:02:43 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 16:55:39 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:14:14 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ t_elem	*ft_strtoelems(char **values);
 
 t_stack	*handle_args_to_stack_initialization(char *stack_name,\
 	size_t argc, char **argv);
+
+void	sort_radix(t_stack *a, t_stack *b);
+void	sort_two(t_stack *a);
+void	sort_three(t_stack *a);
+void	sort_four_five(t_stack *a, t_stack *b);
 void	handle_sorting(t_stack *a, t_stack *b);
 
 t_elem	*t_elem__new(int value, int rank, t_elem *next, t_elem *prev);

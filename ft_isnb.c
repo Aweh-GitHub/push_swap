@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:20:05 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 15:43:44 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:09:54 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	ft_isnb(char *s)
 {
-	size_t	i;
-	long int nb;
-	long int sign;
+	size_t		i;
+	long int	nb;
+	long int	sign;
 
 	if (s == NULL)
 		return (0);
