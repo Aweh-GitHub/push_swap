@@ -6,22 +6,12 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:46:57 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/26 11:02:26 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 18:00:50 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
-
-void	t_elem_add_last(t_elem *elem, t_elem *to_add)
-{
-	t_elem	*scroll;
-
-	scroll = elem;
-	while (scroll->up != NULL)
-		scroll = scroll->up;
-	scroll->up = to_add;
-}
 
 t_elem	*t_elem__new(int value, int rank, t_elem *next, t_elem *prev)
 {
