@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:01:59 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/26 11:00:25 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:01:56 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
+	if (argc == 1)
+		return (0);
 	a = handle_args_to_stack_initialization("a", (size_t) argc, argv);
 	if (a == NULL)
 		return (1);
