@@ -6,27 +6,11 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:45:05 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/26 10:57:33 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:52:45 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include "debug_push_swag.h"
-#include <stdio.h>
-
-t_elem	*get_last_ascending_elem(t_stack *stack)
-{
-	t_elem	*scroll;
-
-	scroll = stack->top;
-	while (scroll != NULL)
-	{
-		if (scroll->value > scroll->down->value)
-			return (scroll);
-		scroll = scroll->down;
-	}
-	return (NULL);
-}
 
 void	handle_sorting(t_stack *a, t_stack *b)
 {
@@ -46,13 +30,13 @@ void	handle_sorting(t_stack *a, t_stack *b)
 		while (elem_i < a_size)
 		{
 			if ((a->top->rank >> byte_i & 1) == 0)
-				p_x(b, a);
+				push_x(b, a);
 			else
-				r_x(a);
+				rotate_x(a, 1);
 			elem_i++;
 		}
 		while (b->top)
-			p_x(a, b);
+			push_x(a, b);
 		byte_i++;
 	}
 }

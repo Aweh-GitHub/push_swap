@@ -6,7 +6,7 @@
 #    By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 11:38:46 by thantoni          #+#    #+#              #
-#    Updated: 2025/11/30 16:47:15 by thantoni         ###   ########.fr        #
+#    Updated: 2025/11/30 16:53:20 by thantoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,10 @@ SRCS =	ft_atoi.c						\
 		handler_args_initialization.c	\
 		handler_sorting.c				\
 		main.c							\
-		operation_p.c					\
-		operation_r.c					\
-		operation_s.c					\
-		operation_rr.c					\
+		operation_push.c					\
+		operation_rotate.c					\
+		operation_swap.c					\
+		operation_rev_rotate.c					\
 		t_elem__utils.c					\
 		t_stack__utils.c				
 

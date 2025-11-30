@@ -3,6 +3,7 @@
 		"push_swap.h": "c",
 		"stdio.h": "c",
 		"debug_push_swag.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"types.h": "c"
 	}
 }

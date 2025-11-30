@@ -6,13 +6,13 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:59:19 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 16:44:24 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:50:52 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	p_x(t_stack *dst, t_stack *src)
+void	push_x(t_stack *dst, t_stack *src)
 {
 	t_elem	*elem;
 

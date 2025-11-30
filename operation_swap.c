@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_s.c                                      :+:      :+:    :+:   */
+/*   operation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 16:40:04 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 16:40:55 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:52:03 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	s_x(t_stack *stack, int print)
+void	swap_x(t_stack *stack, int print)
 {
     t_elem	*first;
     t_elem	*second;
@@ -38,9 +38,9 @@ void	s_x(t_stack *stack, int print)
     }
 }
 
-void	ss(t_stack *a, t_stack *b)
+void	swap_swap(t_stack *a, t_stack *b)
 {
-    s_x(a, 0);
-    s_x(b, 0);
+    swap_x(a, 0);
+    swap_x(b, 0);
     ft_putstr("ss\n");
 }
