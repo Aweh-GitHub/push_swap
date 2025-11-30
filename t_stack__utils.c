@@ -6,25 +6,25 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:37:04 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 17:43:00 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:50:08 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-static size_t count_and_find_last(t_elem *elem, t_elem **last)
+static size_t	count_and_find_last(t_elem *elem, t_elem **last)
 {
-    size_t	count;
+	size_t	count;
 
-    *last = elem;
-    count = 1;
-    while ((*last)->down != NULL)
-    {
-        *last = (*last)->down;
-        count++;
-    }
-    return (count);
+	*last = elem;
+	count = 1;
+	while ((*last)->down != NULL)
+	{
+		*last = (*last)->down;
+		count++;
+	}
+	return (count);
 }
 
 t_stack	*t_stack__new(char *name, t_elem *head, t_elem *tail)
