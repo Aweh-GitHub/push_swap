@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
-	a = handle_args_to_stack_initialization("a", (size_t) argc, argv);
+	a = init_args_to_stack("a", (size_t) argc, argv);
 	if (a == NULL)
 		return (1);
 	b = t_stack__new("b", NULL, NULL);

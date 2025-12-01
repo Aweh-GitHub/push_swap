@@ -89,8 +89,8 @@ static void	free_strvalues(char **strvalues)
 	free(strvalues);
 }
 
-t_stack	*handle_args_to_stack_initialization\
-(char *stack_name, size_t argc, char **argv)
+t_stack	*init_args_to_stack(char *stack_name, \
+	size_t argc, char **argv)
 {
 	size_t	argv_i;
 	char	**strvalues;

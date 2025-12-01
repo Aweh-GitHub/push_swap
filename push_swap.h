@@ -43,7 +43,7 @@ int		ft_isnb(char *s);
 size_t	ft_splitlen(char const **split);
 t_elem	*ft_strtoelems(char **values);
 
-t_stack	*handle_args_to_stack_initialization(char *stack_name,\
+t_stack	*init_args_to_stack(char *stack_name, \
 	size_t argc, char **argv);
 
 void	sort_radix(t_stack *a, t_stack *b);
