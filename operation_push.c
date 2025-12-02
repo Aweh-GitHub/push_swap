@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 void	push_x(t_stack *dst, t_stack *src)
 {
@@ -18,9 +19,6 @@ void	push_x(t_stack *dst, t_stack *src)
 
 	if (!(src->top))
 		return ;
-	ft_putstr("p");
-	ft_putstr(dst->name);
-	ft_putstr("\n");
 	elem = src->top;
 	src->top = elem->down;
 	if (src->top)
@@ -36,4 +34,7 @@ void	push_x(t_stack *dst, t_stack *src)
 	dst->top = elem;
 	elem->up = NULL;
 	dst->size++;
+	write(1, "p", 1);
+	ft_putstr(dst->name);
+	write(1, "\n", 1);
 }

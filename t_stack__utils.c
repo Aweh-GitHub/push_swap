@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:37:04 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/30 17:50:08 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:10:17 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	t_stack__free_all(t_stack *stack)
 	t_elem	*scroll;
 	t_elem	*to_free;
 
-	scroll = stack->bot;
+	scroll = stack->top;
 	while (scroll != NULL)
 	{
 		to_free = scroll;

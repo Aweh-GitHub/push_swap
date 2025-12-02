@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 void	rev_rotate_x(t_stack *stack, int print)
 {
@@ -29,9 +30,9 @@ void	rev_rotate_x(t_stack *stack, int print)
 	stack->top = last;
 	if (print)
 	{
-		ft_putstr("rr");
+		write(1, "rr", 2);
 		ft_putstr(stack->name);
-		ft_putstr("\n");
+		write(1, "\n", 1);
 	}
 }
 
@@ -39,5 +40,5 @@ void	rev_rotate_rotate(t_stack *a, t_stack *b)
 {
 	rev_rotate_x(a, 0);
 	rev_rotate_x(b, 0);
-	ft_putstr("rrr\n");
+	write(1, "rrr\n", 4);
 }

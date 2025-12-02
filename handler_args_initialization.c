@@ -46,7 +46,7 @@ static int	are_values_uniques(t_stack *stack)
 	ref = stack->top;
 	while (ref != NULL)
 	{
-		cmp = ref->up;
+		cmp = ref->down;
 		while (cmp != NULL)
 		{
 			if (cmp != ref && cmp->value == ref->value)
@@ -103,7 +103,7 @@ t_stack	*init_args_to_stack(char *stack_name, \
 		strvalues = ft_split(argv[argv_i], ' ');
 		if (!are_all_strvalues_valid(strvalues))
 		{
-			write(2, "Error\n", 6);
+			write(1, "Error\n", 6);
 			free_strvalues(strvalues);
 			return (t_stack__free_all(stack), NULL);
 		}
@@ -111,7 +111,7 @@ t_stack	*init_args_to_stack(char *stack_name, \
 		free_strvalues(strvalues);
 		if (!are_values_uniques(stack))
 		{
-			write(2, "Error\n", 6);
+			write(1, "Error\n", 6);
 			return (t_stack__free_all(stack), NULL);
 		}
 		argv_i++;

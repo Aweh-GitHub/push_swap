@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 void	swap_x(t_stack *stack, int print)
 {
@@ -32,9 +33,9 @@ void	swap_x(t_stack *stack, int print)
 	stack->top = second;
 	if (print)
 	{
-		ft_putstr("s");
+		write(1, "s", 1);
 		ft_putstr(stack->name);
-		ft_putstr("\n");
+		write(1, "\n", 1);
 	}
 }
 
@@ -42,5 +43,5 @@ void	swap_swap(t_stack *a, t_stack *b)
 {
 	swap_x(a, 0);
 	swap_x(b, 0);
-	ft_putstr("ss\n");
+	write(1, "ss\n", 1);
 }
